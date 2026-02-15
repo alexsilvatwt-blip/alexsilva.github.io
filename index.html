@@ -38,7 +38,7 @@ h1{
     box-shadow:0 0 40px rgba(0,0,0,0.9);
 }
 
-/* BOTONES CON MARCO GOTICO */
+/* BOTONES CON MARCO GOTICO ANCHO */
 .button{
     position:relative;
     display:inline-block;
@@ -55,7 +55,7 @@ h1{
 .button::before{
     content:"";
     position:absolute;
-    inset:-12px;
+    inset:-26px; /* MARCO MAS ANCHO */
     background:url('marco.png') center/contain no-repeat;
     pointer-events:none;
     filter:hue-rotate(320deg) saturate(5);
@@ -72,32 +72,36 @@ h1{
     padding:40px;
 }
 
-/* NIEBLA */
-.fog{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:url('https://i.imgur.com/8QZ7Z8T.png');
-    opacity:0.06;
-    animation:fogMove 120s linear infinite;
-    pointer-events:none;
-}
-
-@keyframes fogMove{
-    from{background-position:0 0;}
-    to{background-position:1000px 0;}
-}
-
-/* MUSICA BOTON */
-.music{
+/* INTERRUPTOR MUSICA */
+.music-switch{
     position:fixed;
     bottom:20px;
     right:20px;
+    width:65px;
+    height:32px;
     background:#111;
-    color:white;
-    padding:10px 15px;
+    border-radius:30px;
     border:1px solid #600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     cursor:pointer;
+    transition:0.3s;
+}
+
+.music-switch.off{
+    background:#300;
+}
+
+/* PARTICULAS */
+#particles{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:-1;
 }
 
 </style>
@@ -105,23 +109,38 @@ h1{
 
 <body>
 
-<div class="fog"></div>
+<canvas id="particles"></canvas>
 
 <h1>El cumpleaños final de quien nunca debió nacer</h1>
 
-<!-- PORTADA -->
 <img src="portada.jpg" class="cover">
 
 <div class="container">
 
 <a class="button" href="introduccion.html">Introducción</a>
 <a class="button" href="prologo.html">Prólogo</a>
+
 <br><br>
 
-<a class="button" href="parte1.html">Parte I</a>
-<a class="button" href="parte2.html">Parte II</a>
-<a class="button" href="parte3.html">Parte III</a>
-<a class="button" href="parte4.html">Parte IV</a>
+<a class="button" href="parte1.html">
+Parte I — El niño roto<br>
+<i>“Nacer fue su primer error”</i>
+</a>
+
+<a class="button" href="parte2.html">
+Parte II — Los susurros<br>
+<i>“Cuando no hay abrazo, la mente inventa compañía”</i>
+</a>
+
+<a class="button" href="parte3.html">
+Parte III — La venganza de Raven<br>
+<i>“Los niños que juegan con fuego terminan en cenizas.”</i>
+</a>
+
+<a class="button" href="parte4.html">
+Parte IV — El último abrazo<br>
+<i>“Cuando la verdad duele más que la mentira.”</i>
+</a>
 
 <br><br>
 
@@ -129,18 +148,54 @@ h1{
 
 </div>
 
-<audio id="music" loop>
+<audio id="music" autoplay loop>
 <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
-<div class="music" onclick="toggleMusic()">🎵 Música</div>
+<div class="music-switch" onclick="toggleMusic(this)">🎵</div>
 
 <script>
-function toggleMusic(){
-    let m=document.getElementById("music");
-    if(m.paused){m.play();}
-    else{m.pause();}
+function toggleMusic(btn){
+let m=document.getElementById("music");
+if(m.paused){
+m.play();
+btn.classList.remove("off");
+}else{
+m.pause();
+btn.classList.add("off");
 }
+}
+
+/* PARTICULAS ROJAS Y NEGRAS */
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let p=[];
+for(let i=0;i<80;i++){
+p.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2+1,
+c:Math.random()>0.5?"rgba(150,0,0,0.4)":"rgba(0,0,0,0.6)",
+s:Math.random()*0.3+0.1
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+p.forEach(a=>{
+ctx.beginPath();
+ctx.arc(a.x,a.y,a.r,0,Math.PI*2);
+ctx.fillStyle=a.c;
+ctx.fill();
+a.y-=a.s;
+if(a.y<0)a.y=canvas.height;
+});
+requestAnimationFrame(draw);
+}
+draw();
 </script>
 
 </body>
