@@ -3,110 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+
 <title>El cumpleaños final de quien nunca debió nacer</title>
 
 <style>
 
 body{
     margin:0;
-    background:radial-gradient(circle,#0d0d0d,#000);
-    color:#e8e8e8;
+    background:#000;
+    color:#eee;
     font-family:Georgia,serif;
-    line-height:1.6;
-}
-
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:40px 20px;
     text-align:center;
+    overflow-x:hidden;
 }
 
+/* TITULO GOTICO */
 h1{
-    color:#ff3b3b;
-    text-shadow:0 0 12px rgba(255,0,0,0.5);
+    font-family:'UnifrakturCook', cursive;
+    font-size:3.5em;
+    color:#b30000;
+    text-shadow:0 0 15px #400000;
+    margin-top:40px;
 }
 
-h2{
-    margin-top:60px;
-    color:#fff;
-    border-bottom:1px solid #333;
-    padding-bottom:10px;
-}
-
-/* Portada */
-.cover{
-    max-width:320px;
-    width:90%;
-    margin:30px auto;
-    border-radius:12px;
-    box-shadow:0 0 25px rgba(0,0,0,0.9);
-}
-
-/* Botones góticos */
+/* BOTONES CON MARCO */
 .button{
     display:inline-block;
-    margin:10px;
-    padding:14px 28px;
-    color:#fff;
+    margin:15px;
+    padding:20px 35px;
     text-decoration:none;
-    border:2px solid #ff3b3b;
-    border-radius:8px;
-    background:#111;
+    color:white;
     font-weight:bold;
+    background:#090909;
+    border:3px solid #7a0000;
+    box-shadow:0 0 20px rgba(120,0,0,0.6);
     transition:0.3s;
 }
 
 .button:hover{
-    background:#ff3b3b;
-    box-shadow:0 0 15px rgba(255,0,0,0.6);
+    background:#7a0000;
 }
 
-/* Botón grande epílogo */
-.big{
-    font-size:1.2em;
-    padding:18px 35px;
-    margin-top:20px;
+/* CONTENEDOR */
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:40px;
 }
 
-/* Secciones */
-.section{
-    margin-top:70px;
-}
-
-/* Caja comentarios */
-.comment-box{
-    margin-top:40px;
-    background:#111;
-    padding:20px;
-    border-radius:12px;
-}
-
-textarea{
+/* NIEBLA */
+.fog{
+    position:fixed;
     width:100%;
-    height:120px;
-    padding:10px;
-    border:none;
-    border-radius:8px;
-    margin-top:10px;
-    font-family:Georgia,serif;
+    height:100%;
+    background:url('https://i.imgur.com/8QZ7Z8T.png');
+    opacity:0.07;
+    animation:fogMove 120s linear infinite;
+    pointer-events:none;
 }
 
-button{
-    margin-top:10px;
-    padding:10px 20px;
-    border:none;
-    background:#ff3b3b;
+@keyframes fogMove{
+    from{background-position:0 0;}
+    to{background-position:1000px 0;}
+}
+
+/* MUSICA BOTON */
+.music{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#111;
     color:white;
-    border-radius:6px;
+    padding:10px 15px;
+    border:1px solid #600;
     cursor:pointer;
-}
-
-footer{
-    margin-top:80px;
-    padding:30px;
-    font-size:14px;
-    color:#888;
 }
 
 </style>
@@ -114,98 +86,40 @@ footer{
 
 <body>
 
-<div class="container">
+<div class="fog"></div>
 
 <h1>El cumpleaños final de quien nunca debió nacer</h1>
 
-<p><i>“Este libro no se lee… se sobrevive.”</i></p>
+<div class="container">
 
-<!-- IMAGEN PORTADA -->
-<img src="portada.jpg" class="cover">
+<a class="button" href="introduccion.html">Introducción</a>
+<a class="button" href="prologo.html">Prólogo</a>
+<br><br>
 
-<!-- BOTONES PRINCIPALES -->
-<div>
-<a class="button" href="#">Introducción</a>
-<a class="button" href="#">Prólogo</a>
-</div>
+<a class="button" href="parte1.html">Parte I</a>
+<a class="button" href="parte2.html">Parte II</a>
+<a class="button" href="parte3.html">Parte III</a>
+<a class="button" href="parte4.html">Parte IV</a>
 
-<!-- PARTES -->
-<div class="section">
-<h2>Parte I — El niño roto</h2>
-<p><i>“Nacer fue su primer error”</i></p>
-<a class="button" href="#">Capítulo 1</a>
-<a class="button" href="#">Capítulo 2</a>
-<a class="button" href="#">Capítulo 3</a>
-</div>
+<br><br>
 
-<div class="section">
-<h2>Parte II — Los susurros</h2>
-<p><i>“Cuando no hay abrazo, la mente inventa compañía”</i></p>
-<a class="button" href="#">Capítulo 4</a>
-<a class="button" href="#">Capítulo 5</a>
-</div>
-
-<div class="section">
-<h2>Parte III — La venganza de Raven</h2>
-<p><i>“Los niños que juegan con fuego terminan en cenizas.”</i></p>
-<a class="button" href="#">Capítulo 6</a>
-<a class="button" href="#">Capítulo 7</a>
-<a class="button" href="#">Capítulo 8</a>
-<a class="button" href="#">Capítulo 9</a>
-</div>
-
-<div class="section">
-<h2>Parte IV — El último abrazo</h2>
-<p><i>“Cuando la verdad duele más que la mentira.”</i></p>
-<a class="button" href="#">Capítulo 10</a>
-<a class="button" href="#">Capítulo 11</a>
-<a class="button" href="#">Capítulo 12</a>
-</div>
-
-<!-- EPILOGO -->
-<div class="section">
-<a class="button big" href="#">EPÍLOGO</a>
-</div>
-
-<!-- MENSAJE FUTURO -->
-<div class="section">
-<h2>El eco de Raven después de las cenizas</h2>
-<p>
-Algunas historias no terminan cuando las páginas se cierran.  
-Algunas solo esperan… a ser recordadas.
-</p>
-<p><i>Continuará…</i></p>
-</div>
-
-<!-- CONTRAPORTADA -->
-<div class="section">
-<h2>Contraportada</h2>
-<p>
-“Nacer es empezar a morir… pero algunos lo saben demasiado pronto.”  
-Elian nunca pidió venir al mundo.  
-Marcado por una enfermedad incurable, el rechazo de sus padres y la crueldad de sus compañeros, su vida se convirtió en un terreno baldío donde florecieron voces que nadie más escuchaba...
-</p>
-<p>
-“El cumpleaños final de quien nunca debió nacer” es una obra de terror psicológico y tragedia poética.  
-¿Estás dispuesto a soplar las velas?
-</p>
-</div>
-
-<!-- COMENTARIOS -->
-<div class="section comment-box">
-<h2>Comentarios de lectores</h2>
-<p>Escribe tu opinión, teoría o sugerencia:</p>
-
-<textarea placeholder="Escribe aquí..."></textarea>
-<br>
-<button onclick="alert('Comentario enviado (modo local)')">Enviar</button>
-</div>
-
-<footer>
-© 2026 Alex Silva — Sitio oficial del autor
-</footer>
+<a class="button" href="epilogo.html">EPÍLOGO</a>
 
 </div>
+
+<audio id="music" loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music" onclick="toggleMusic()">🎵 Música</div>
+
+<script>
+function toggleMusic(){
+    let m=document.getElementById("music");
+    if(m.paused){m.play();}
+    else{m.pause();}
+}
+</script>
 
 </body>
 </html>
