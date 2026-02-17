@@ -22,7 +22,7 @@ body{
 /* TITULO GOTICO */
 h1{
     font-family:'UnifrakturCook', cursive;
-    font-size:3.6em;
+    font-size:4.2em; /* MÁS GRANDE */
     color:#b30000;
     text-shadow:0 0 20px #400000;
     margin-top:40px;
@@ -30,7 +30,7 @@ h1{
 
 /* PORTADA */
 .cover{
-    width:300px;
+    width:320px;
     max-width:85%;
     margin:30px auto;
     display:block;
@@ -38,35 +38,27 @@ h1{
     box-shadow:0 0 40px rgba(0,0,0,0.9);
 }
 
-/* BOTONES CON MARCO GOTICO AJUSTABLE (ARREGLADO) */
+/* BOTONES */
 .button{
     position:relative;
     display:inline-block;
     margin:18px;
-    padding:18px 35px;
+    padding:20px 40px;
     text-decoration:none;
     color:white;
     font-weight:bold;
     background:#080808;
     border:none;
     transition:0.3s;
+    font-size:1.15em; /* TEXTO MÁS GRANDE */
 }
 
-/* TEXTO ENCIMA DEL MARCO */
-.button span{
-    position:relative;
-    z-index:2;
-}
-
-/* MARCO AHORA SE AJUSTA AL BOTON */
 .button::before{
     content:"";
     position:absolute;
-    inset:0;
-    background:url('marco.png') center/100% 100% no-repeat;
-    transform:scale(1.18);
+    inset:-26px;
+    background:url('marco.png') center/contain no-repeat;
     pointer-events:none;
-    z-index:1;
     filter:hue-rotate(320deg) saturate(5);
 }
 
@@ -113,6 +105,18 @@ h1{
     z-index:-1;
 }
 
+/* TITULOS DE SECCION */
+.section-title{
+    margin-top:70px;
+    font-size:1.8em;
+}
+
+.quote{
+    font-style:italic;
+    opacity:0.8;
+    margin-bottom:25px;
+}
+
 </style>
 </head>
 
@@ -126,79 +130,45 @@ h1{
 
 <div class="container">
 
-<a class="button" href="introduccion.html"><span>Introducción</span></a>
-<a class="button" href="prologo.html"><span>Prólogo</span></a>
+<a class="button" href="introduccion.html">Introducción</a>
+<a class="button" href="prologo.html">Prólogo</a>
+
+<!-- PARTE I -->
+<div class="section-title">Parte I — El niño roto</div>
+<div class="quote">“Nacer fue su primer error”</div>
+
+<a class="button" href="cap1.html">Capítulo 1</a>
+<a class="button" href="cap2.html">Capítulo 2</a>
+<a class="button" href="cap3.html">Capítulo 3</a>
+
+<!-- PARTE II -->
+<div class="section-title">Parte II — Los susurros</div>
+<div class="quote">“Cuando no hay abrazo, la mente inventa compañía”</div>
+
+<a class="button" href="cap4.html">Capítulo 4</a>
+<a class="button" href="cap5.html">Capítulo 5</a>
+
+<!-- PARTE III -->
+<div class="section-title">Parte III — La venganza de Raven</div>
+<div class="quote">“Los niños que juegan con fuego terminan en cenizas.”</div>
+
+<a class="button" href="cap6.html">Capítulo 6</a>
+<a class="button" href="cap7.html">Capítulo 7</a>
+<a class="button" href="cap8.html">Capítulo 8</a>
+<a class="button" href="cap9.html">Capítulo 9</a>
+
+<!-- PARTE IV -->
+<div class="section-title">Parte IV — El último abrazo</div>
+<div class="quote">“Cuando la verdad duele más que la mentira.”</div>
+
+<a class="button" href="cap10.html">Capítulo 10</a>
+<a class="button" href="cap11.html">Capítulo 11</a>
+<a class="button" href="cap12.html">Capítulo 12</a>
 
 <br><br>
 
-<a class="button" href="parte1.html"><span>
-Parte I — El niño roto<br>
-<i>“Nacer fue su primer error”</i>
-</span></a>
+<a class="button" href="epilogo.html">EPÍLOGO</a>
 
-<a class="button" href="parte2.html"><span>
-Parte II — Los susurros<br>
-<i>“Cuando no hay abrazo, la mente inventa compañía”</i>
-</span></a>
-
-<a class="button" href="parte3.html"><span>
-Parte III — La venganza de Raven<br>
-<i>“Los niños que juegan con fuego terminan en cenizas.”</i>
-</span></a>
-
-<a class="button" href="parte4.html"><span>
-Parte IV — El último abrazo<br>
-<i>“Cuando la verdad duele más que la mentira.”</i>
-</span></a>
-
-<br><br>
-
-<a class="button" href="epilogo.html"><span>EPÍLOGO</span></a>
-
-</div>
-
-<!-- NUEVA SECCION: ECO DE RAVEN -->
-<div class="container">
-<h2>El eco de Raven después de las cenizas</h2>
-<hr style="opacity:0.2">
-<p>Algunas historias no terminan cuando las páginas se cierran. Algunas solo esperan… a ser recordadas.</p>
-<i>Continuará…</i>
-</div>
-
-<!-- NUEVA SECCION: CONTRAPORTADA -->
-<div class="container">
-<h2>Contraportada</h2>
-<hr style="opacity:0.2">
-
-<p>
-“Nacer es empezar a morir… pero algunos lo saben demasiado pronto.”
-Elian nunca pidió venir al mundo. Marcado por una enfermedad incurable,
-el rechazo de sus padres y la crueldad de sus compañeros,
-su vida se convirtió en un terreno baldío donde florecieron voces
-que nadie más escuchaba.
-</p>
-
-<p>
-Lo que comienza como un susurro se transforma en un grito sangriento.
-Pero la verdad más cruel no está en lo que Raven hizo con él,
-sino en lo que siempre estuvo dentro de Elian.
-</p>
-
-<p><b>¿Estás dispuesto a soplar las velas?</b></p>
-</div>
-
-<!-- NUEVA SECCION: COMENTARIOS -->
-<div class="container" style="background:#0b0b0b;border-radius:12px;">
-<h2>Comentarios de lectores</h2>
-<hr style="opacity:0.2">
-
-<p>Escribe tu opinión, teoría o sugerencia:</p>
-
-<textarea style="width:80%;height:140px;border-radius:8px;padding:15px;"></textarea>
-<br><br>
-<button style="padding:10px 25px;background:#b30000;border:none;color:white;border-radius:6px;cursor:pointer;">
-Enviar
-</button>
 </div>
 
 <audio id="music" autoplay loop>
@@ -219,7 +189,7 @@ btn.classList.add("off");
 }
 }
 
-/* PARTICULAS ROJAS Y NEGRAS */
+/* PARTICULAS */
 const canvas=document.getElementById("particles");
 const ctx=canvas.getContext("2d");
 canvas.width=window.innerWidth;
